@@ -1,4 +1,4 @@
-public with sharing class PropertyController {
+public class PropertyController {
     private static final Decimal DEFAULT_MAX_PRICE = 9999999;
     private static final Integer DEFAULT_PAGE_SIZE = 9;
 
@@ -108,7 +108,7 @@ public with sharing class PropertyController {
             SELECT Id, Title
             FROM ContentVersion
             WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE
-            WITH SECURITY_ENFORCED
+            //WITH SECURITY_ENFORCED
             ORDER BY CreatedDate
         ];
     }
